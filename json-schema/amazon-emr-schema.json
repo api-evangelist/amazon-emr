@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/amazon/emr/cluster.json",
+  "title": "Amazon EMR Cluster",
+  "description": "Represents an Amazon EMR cluster with its associated configuration, state, and metadata.",
+  "type": "object",
+  "required": ["id", "name", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the cluster",
+      "pattern": "^j-[A-Z0-9]{13}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the cluster"
+    },
+    "status": {
+      "type": "object",
+      "description": "The current status of the cluster",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": ["STARTING", "BOOTSTRAPPING", "RUNNING", "WAITING", "TERMINATING", "TERMINATED", "TERMINATED_WITH_ERRORS"],
+          "description": "The current state of the cluster"
+        },
+        "stateChangeReason": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "The programmatic code for the state change reason"
+            },
+            "message": {
+              "type": "string",
+              "description": "The descriptive message for the state change reason"
+            }
+          }
+        },
+        "timeline": {
+          "type": "object",
+          "properties": {
+            "creationDateTime": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "readyDateTime": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "endDateTime": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "releaseLabel": {
+      "type": "string",
+      "description": "The Amazon EMR release label (e.g., emr-6.10.0)"
+    },
+    "applications": {
+      "type": "array",
+      "description": "The applications installed on the cluster",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the application (e.g., Spark, Hadoop, Hive)"
+          },
+          "version": {
+            "type": "string",
+            "description": "The version of the application"
+          }
+        }
+      }
+    },
+    "instanceCollectionType": {
+      "type": "string",
+      "enum": ["INSTANCE_FLEET", "INSTANCE_GROUP"],
+      "description": "The instance collection type"
+    },
+    "logUri": {
+      "type": "string",
+      "description": "The S3 path for log storage"
+    },
+    "autoTerminate": {
+      "type": "boolean",
+      "description": "Whether the cluster auto-terminates after steps complete"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags associated with the cluster",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

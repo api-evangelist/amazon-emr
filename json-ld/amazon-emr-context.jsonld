@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "emr": "https://docs.aws.amazon.com/emr/latest/APIReference/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Cluster": {
+      "@id": "emr:Cluster",
+      "@context": {
+        "id": "emr:clusterId",
+        "name": "schema:name",
+        "status": "emr:clusterStatus",
+        "releaseLabel": "emr:releaseLabel",
+        "applications": {
+          "@id": "emr:applications",
+          "@container": "@set"
+        },
+        "instanceCollectionType": "emr:instanceCollectionType",
+        "logUri": "emr:logUri",
+        "autoTerminate": "emr:autoTerminate",
+        "creationDateTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "tags": {
+          "@id": "emr:tags",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "Step": {
+      "@id": "emr:Step",
+      "@context": {
+        "id": "emr:stepId",
+        "name": "schema:name",
+        "status": "emr:stepStatus",
+        "actionOnFailure": "emr:actionOnFailure",
+        "hadoopJarStep": "emr:hadoopJarStep"
+      }
+    }
+  }
+}

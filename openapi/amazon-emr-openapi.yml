@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Amazon EMR API
+  description: >-
+    Amazon EMR (Elastic MapReduce) provides a managed big data platform that
+    simplifies running open-source frameworks such as Apache Spark and Hadoop
+    to process and analyze vast amounts of data. This API enables you to
+    create and manage clusters, add processing steps, configure auto-scaling,
+    and monitor cluster health and performance.
+  version: '2009-03-31'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+externalDocs:
+  description: Amazon EMR API Reference
+  url: https://docs.aws.amazon.com/emr/latest/APIReference/Welcome.html
+servers:
+  - url: https://elasticmapreduce.{region}.amazonaws.com
+    description: Amazon EMR Regional Endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS Region
+tags:
+  - name: Clusters
+    description: Operations for creating, managing, and terminating EMR clusters
+  - name: Steps
+    description: Operations for adding and managing processing steps on clusters
+  - name: Instance Groups
+    description: Operations for managing instance groups within clusters
+  - name: Security
+    description: Operations for managing security configurations
+paths:
+  /:
+    post:
+      operationId: RunJobFlow
+      summary: Create and start an EMR cluster
+      description: Creates and starts running a new cluster (job flow).
+      tags:
+        - Clusters
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Name
+                - Instances
+              properties:
+                Name:
+                  type: string
+                  description: The name of the cluster
+                Instances:
+                  type: object
+                  description: Instance configuration for the cluster
+                ReleaseLabel:
+                  type: string
+                  description: The Amazon EMR release label (e.g., emr-6.10.0)
+                Steps:
+                  type: array
+                  description: Steps to run after cluster creation
+                  items:
+                    type: object
+                Applications:
+                  type: array
+                  description: Applications to install on the cluster
+                  items:
+                    type: object
+                    properties:
+                      Name:
+                        type: string
+      responses:
+        '200':
+          description: Cluster created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  JobFlowId:
+                    type: string
+                    description: The unique identifier of the cluster
