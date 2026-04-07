@@ -35,7 +35,7 @@ paths:
   /:
     post:
       operationId: RunJobFlow
-      summary: Create and start an EMR cluster
+      summary: Amazon EMR Create and start an EMR cluster
       description: Creates and starts running a new cluster (job flow).
       tags:
         - Clusters
