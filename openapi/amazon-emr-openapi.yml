@@ -25,12 +25,6 @@ servers:
 tags:
   - name: Clusters
     description: Operations for creating, managing, and terminating EMR clusters
-  - name: Steps
-    description: Operations for adding and managing processing steps on clusters
-  - name: Instance Groups
-    description: Operations for managing instance groups within clusters
-  - name: Security
-    description: Operations for managing security configurations
 paths:
   /:
     post:
