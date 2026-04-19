@@ -16,23 +16,23 @@ externalDocs:
   description: Amazon EMR API Reference
   url: https://docs.aws.amazon.com/emr/latest/APIReference/Welcome.html
 servers:
-  - url: https://elasticmapreduce.{region}.amazonaws.com
-    description: Amazon EMR Regional Endpoint
-    variables:
-      region:
-        default: us-east-1
-        description: AWS Region
+- url: https://elasticmapreduce.{region}.amazonaws.com
+  description: Amazon EMR Regional Endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS Region
 tags:
-  - name: Clusters
-    description: Operations for creating, managing, and terminating EMR clusters
+- name: Clusters
+  description: Operations for creating, managing, and terminating EMR clusters
 paths:
   /:
     post:
       operationId: RunJobFlow
-      summary: Amazon EMR Create and start an EMR cluster
+      summary: Amazon EMR Create and Start an EMR Cluster
       description: Creates and starts running a new cluster (job flow).
       tags:
-        - Clusters
+      - Clusters
       requestBody:
         required: true
         content:
@@ -40,8 +40,8 @@ paths:
             schema:
               type: object
               required:
-                - Name
-                - Instances
+              - Name
+              - Instances
               properties:
                 Name:
                   type: string
@@ -65,6 +65,16 @@ paths:
                     properties:
                       Name:
                         type: string
+            examples:
+              RunJobFlowRequestExample:
+                summary: Default RunJobFlow request
+                x-microcks-default: true
+                value:
+                  Name: example-name
+                  Instances: {}
+                  ReleaseLabel: example
+                  Steps: []
+                  Applications: []
       responses:
         '200':
           description: Cluster created successfully
@@ -76,3 +86,12 @@ paths:
                   JobFlowId:
                     type: string
                     description: The unique identifier of the cluster
+              examples:
+                RunJobFlow200Example:
+                  summary: Default RunJobFlow 200 response
+                  x-microcks-default: true
+                  value:
+                    JobFlowId: example-id-12345
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

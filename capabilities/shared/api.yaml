@@ -1,0 +1,69 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: EMR
+  description: Run big data frameworks like Apache Spark and Hadoop
+  tags:
+  - Amazon Web Services
+  - Big Data
+  - Analytics
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_API_KEY: AWS_API_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - type: http
+    namespace: api
+    baseUri: https://elasticmapreduce.{region}.amazonaws.com
+    description: Run big data frameworks like Apache Spark and Hadoop
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_SIGNATURE}}'
+      placement: header
+    resources:
+    - name: Clusters
+      path: /clusters
+      description: Clusters resources
+      operations:
+      - name: RunJobFlow
+        method: POST
+        description: Amazon EMR Create and Start an EMR Cluster
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8088
+    namespace: api-api
+    resources:
+    - path: /v1/RunJobFlow
+      name: RunJobFlow
+      description: Amazon EMR Create and Start an EMR Cluster
+      operations:
+      - method: POST
+        name: RunJobFlow
+        description: Amazon EMR Create and Start an EMR Cluster
+        call: api.RunJobFlow
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9098
+    namespace: api-mcp
+    transport: http
+    tools:
+    - name: RunJobFlow
+      description: Amazon EMR Create and Start an EMR Cluster
+      hints:
+        readOnly: false
+      call: api.RunJobFlow
+      outputParameters:
+      - type: object
+        mapping: $.

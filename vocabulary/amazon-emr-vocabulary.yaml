@@ -1,0 +1,76 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon EMR
+  description: Unified vocabulary and taxonomy for Amazon EMR APIs and capabilities
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon EMR API
+    namespace: emr
+    version: '2009-03-31'
+    baseUrl: https://elasticmapreduce.{region}.amazonaws.com
+    status: active
+  resources:
+  - name: Clusters
+    api: Amazon EMR
+    actions:
+    - POST
+  actions:
+  - verb: run
+    httpMethod: POST
+    pattern: write
+  schemas:
+    core: []
+  parameters:
+    pagination:
+    - name: MaxResults
+      description: Maximum number of results to return
+    - name: NextToken
+      description: Pagination token for next page of results
+    identifiers:
+    - name: Id
+      description: Resource identifier
+    - name: Arn
+      description: Amazon Resource Name
+  enums:
+    states:
+    - Active
+    - Inactive
+    - Pending
+    - Terminated
+  authentication:
+  - name: AWS Signature V4
+    type: apiKey
+capability:
+  workflows:
+  - name: Amazon EMR Management
+    file: capabilities/amazon-emr-capability.yaml
+    description: Unified capability for managing Amazon EMR resources. Combines Amazon EMR APIs for Data Engineer workflows in Big Data Processing.
+    toolCount: 1
+  personas:
+  - id: developer
+    name: Application Developer
+    description: Developers building applications using Amazon EMR
+  - id: operator
+    name: Cloud Operator
+    description: Operations teams managing Amazon EMR infrastructure
+  domains:
+  - name: Amazon EMR
+    description: Big data platform for running Apache Spark, Hadoop, and other frameworks
+  namespaces:
+  - type: consumed
+    namespace: emr
+  - type: rest
+    namespace: amazon-emr-api
+  - type: mcp
+    namespace: amazon-emr-mcp
+  binds:
+  - AWS_API_KEY
+  - AWS_REGION
+crossReference:
+- resource: Clusters
+  operations:
+  - run
+  workflows:
+  - Amazon EMR Management

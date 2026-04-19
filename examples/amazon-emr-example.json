@@ -1,0 +1,32 @@
+{
+  "id": "example-value",
+  "name": "example-value",
+  "status": {
+    "state": "WAITING",
+    "stateChangeReason": {
+      "code": "example-value",
+      "message": "example-value"
+    },
+    "timeline": {
+      "creationDateTime": "2025-01-15T00:00:00Z",
+      "readyDateTime": "2025-01-15T00:00:00Z",
+      "endDateTime": "2025-01-15T00:00:00Z"
+    }
+  },
+  "releaseLabel": "example-value",
+  "applications": [
+    {
+      "name": "example-value",
+      "version": "example-value"
+    }
+  ],
+  "instanceCollectionType": "INSTANCE_GROUP",
+  "logUri": "example-value",
+  "autoTerminate": true,
+  "tags": [
+    {
+      "key": "example-value",
+      "value": "example-value"
+    }
+  ]
+}
