@@ -1,50 +1,62 @@
-naftiko: 1.0.0-alpha1
+naftiko: 1.0.0-alpha2
 info:
-  label: Amazon EMR Management
-  description: Unified capability for managing Amazon EMR resources. Combines Amazon EMR APIs for Data Engineer workflows in Big Data Processing.
+  label: Amazon EMR API
+  description: Amazon EMR (Elastic MapReduce) provides a managed big data platform that simplifies running open-source frameworks
+    such as Apache Spark and Hadoop to process and analyze vast amounts of data. This API enables you to create and manage
+    clusters, add processing steps, configure auto-scaling, and monitor cluster health and performance.
   tags:
-  - Amazon Web Services
-  - Big Data
-  - Analytics
-  created: '2026-04-19'
-  modified: '2026-04-19'
-binds:
-- namespace: env
-  keys:
-    AWS_API_KEY: AWS_API_KEY
-    AWS_REGION: AWS_REGION
+  - Amazon
+  - Emr
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
 capability:
   consumes:
-  - import: emr
-    location: ./shared/emr.yaml
+  - type: http
+    namespace: amazon-emr
+    baseUri: https://elasticmapreduce.us-east-1.amazonaws.com
+    description: Amazon EMR API HTTP API.
+    resources:
+    - name: resource
+      path: /
+      operations:
+      - name: runjobflow
+        method: POST
+        description: Amazon EMR Create and Start an EMR Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
   exposes:
   - type: rest
-    port: 8188
-    namespace: amazon-emr-workflow-api
-    description: Unified REST API for Amazon EMR management.
+    port: 8080
+    namespace: amazon-emr-rest
+    description: REST adapter for Amazon EMR API.
     resources:
-    - path: /v1/RunJobFlow
-      name: RunJobFlow
-      description: Amazon EMR Create and Start an EMR Cluster
+    - path: /
+      name: runjobflow
       operations:
       - method: POST
-        name: RunJobFlow
+        name: runjobflow
         description: Amazon EMR Create and Start an EMR Cluster
-        call: api.RunJobFlow
+        call: amazon-emr.runjobflow
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
-    port: 9198
+    port: 9090
     namespace: amazon-emr-mcp
     transport: http
-    description: MCP server for AI-assisted Amazon EMR management.
+    description: MCP adapter for Amazon EMR API for AI agent use.
     tools:
-    - name: RunJobFlow
+    - name: runjobflow
       description: Amazon EMR Create and Start an EMR Cluster
       hints:
         readOnly: false
-      call: api.RunJobFlow
+        destructive: false
+        idempotent: false
+      call: amazon-emr.runjobflow
       outputParameters:
       - type: object
         mapping: $.
