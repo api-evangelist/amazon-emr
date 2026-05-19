@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon EMR API — Clusters
+  description: 'Amazon EMR API — Clusters. 1 operations. Lead operation: Amazon EMR Create and Start an EMR Cluster. Self-contained
+    Naftiko capability covering one Amazon Emr business surface.'
+  tags:
+  - Amazon Emr
+  - Clusters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_EMR_API_KEY: AMAZON_EMR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-emr-clusters
+    baseUri: https://elasticmapreduce.{region}.amazonaws.com
+    description: Amazon EMR API — Clusters business capability. Self-contained, no shared references.
+    resources:
+    - name: root
+      path: /
+      operations:
+      - name: runjobflow
+        method: POST
+        description: Amazon EMR Create and Start an EMR Cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: amazon-emr-clusters-rest
+    port: 8080
+    description: REST adapter for Amazon EMR API — Clusters. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1
+      name: root
+      description: REST surface for root.
+      operations:
+      - method: POST
+        name: runjobflow
+        description: Amazon EMR Create and Start an EMR Cluster
+        call: amazon-emr-clusters.runjobflow
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-emr-clusters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon EMR API — Clusters. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-emr-create-and-start
+      description: Amazon EMR Create and Start an EMR Cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-emr-clusters.runjobflow
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,10 +1,11 @@
 name: Amazon EMR
-description: Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive SQL queries, and machine learning applications using open-source analytics 
-  frameworks such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto.
+description: Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive
+  SQL queries, and machine learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive,
+  Apache HBase, Apache Flink, Apache Hudi, and Presto.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/emr/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 tags:
 - Amazon Web Services
@@ -16,7 +17,8 @@ tags:
 - Hadoop
 apis:
 - name: Amazon EMR API
-  description: API for creating and managing Amazon EMR clusters, steps, instance groups, and running distributed big data processing workloads.
+  description: API for creating and managing Amazon EMR clusters, steps, instance groups, and running distributed big data
+    processing workloads.
   humanURL: https://aws.amazon.com/emr/
   baseURL: https://elasticmapreduce.amazonaws.com
   tags:
@@ -41,6 +43,8 @@ apis:
     url: json-schema/amazon-emr-schema.json
   - type: JSONLD
     url: json-ld/amazon-emr-context.jsonld
+  - type: NaftikoCapability
+    url: capabilities/amazon-emr-clusters.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -82,10 +86,6 @@ common:
   url: https://aws.amazon.com/contact-us/
 - type: SpectralRules
   url: rules/amazon-emr-spectral-rules.yml
-- type: NaftikoCapability
-  url: capabilities/amazon-emr-capability.yaml
-- type: NaftikoCapability
-  url: capabilities/shared/api.yaml
 - type: Vocabulary
   url: vocabulary/amazon-emr-vocabulary.yaml
 - type: Features
