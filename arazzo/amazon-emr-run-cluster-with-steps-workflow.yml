@@ -1,0 +1,69 @@
+arazzo: 1.0.1
+info:
+  title: Amazon EMR Launch a Cluster With Processing Steps
+  summary: Create a cluster and queue processing steps to run as soon as it starts.
+  description: >-
+    Launches a managed Amazon EMR cluster and submits an initial batch of
+    processing steps in the same RunJobFlow call so the work begins as soon as
+    the cluster is provisioned. The workflow passes through the caller supplied
+    instance configuration, release label, and ordered list of steps, and
+    returns the new cluster's JobFlowId. Every step spells out its request
+    inline, including the AWS JSON protocol X-Amz-Target header, so the flow can
+    be read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: emrApi
+  url: ../openapi/amazon-emr-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-cluster-with-steps
+  summary: Run a new EMR cluster with an initial batch of steps queued.
+  description: >-
+    Creates and starts a new EMR cluster and submits the supplied ordered list
+    of processing steps to run after the cluster is created, returning the
+    identifier of the newly created cluster.
+  inputs:
+    type: object
+    required:
+    - name
+    - instances
+    - releaseLabel
+    - steps
+    properties:
+      name:
+        type: string
+        description: The name of the cluster to create.
+      instances:
+        type: object
+        description: The instance configuration for the cluster.
+      releaseLabel:
+        type: string
+        description: The Amazon EMR release label (e.g. emr-6.10.0).
+      steps:
+        type: array
+        description: The ordered list of processing steps to run after cluster creation.
+        items:
+          type: object
+  steps:
+  - stepId: launchClusterWithSteps
+    description: >-
+      Create and start a new EMR cluster and queue the supplied processing
+      steps to run once the cluster is provisioned.
+    operationId: RunJobFlow
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: ElasticMapReduce.RunJobFlow
+    requestBody:
+      contentType: application/json
+      payload:
+        Name: $inputs.name
+        Instances: $inputs.instances
+        ReleaseLabel: $inputs.releaseLabel
+        Steps: $inputs.steps
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobFlowId: $response.body#/JobFlowId
+  outputs:
+    jobFlowId: $steps.launchClusterWithSteps.outputs.jobFlowId

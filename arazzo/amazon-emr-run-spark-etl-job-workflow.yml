@@ -1,0 +1,72 @@
+arazzo: 1.0.1
+info:
+  title: Amazon EMR Run a Spark ETL Job
+  summary: Launch a Spark cluster and queue an ETL processing step in one call.
+  description: >-
+    Launches a managed Amazon EMR cluster with Apache Spark installed and
+    submits the supplied ETL processing steps in the same RunJobFlow call, so an
+    extract-transform-load workload begins as soon as the cluster is
+    provisioned. The workflow passes through the caller supplied name, instance
+    configuration, release label, and steps, requests the Spark application, and
+    returns the new cluster's JobFlowId. Every step spells out its request
+    inline, including the AWS JSON protocol X-Amz-Target header, so the flow can
+    be read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: emrApi
+  url: ../openapi/amazon-emr-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-spark-etl-job
+  summary: Run a Spark cluster with ETL processing steps queued.
+  description: >-
+    Creates and starts a new EMR cluster with Spark installed and queues the
+    supplied ETL processing steps to run once the cluster is provisioned,
+    returning the identifier of the newly created cluster.
+  inputs:
+    type: object
+    required:
+    - name
+    - instances
+    - releaseLabel
+    - steps
+    properties:
+      name:
+        type: string
+        description: The name of the cluster to create.
+      instances:
+        type: object
+        description: The instance configuration for the cluster.
+      releaseLabel:
+        type: string
+        description: The Amazon EMR release label (e.g. emr-6.10.0).
+      steps:
+        type: array
+        description: The ordered list of ETL processing steps to run after cluster creation.
+        items:
+          type: object
+  steps:
+  - stepId: runSparkEtl
+    description: >-
+      Create and start a new EMR cluster with Spark installed and queue the
+      supplied ETL processing steps to run once the cluster is provisioned.
+    operationId: RunJobFlow
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: ElasticMapReduce.RunJobFlow
+    requestBody:
+      contentType: application/json
+      payload:
+        Name: $inputs.name
+        Instances: $inputs.instances
+        ReleaseLabel: $inputs.releaseLabel
+        Applications:
+        - Name: Spark
+        Steps: $inputs.steps
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobFlowId: $response.body#/JobFlowId
+  outputs:
+    jobFlowId: $steps.runSparkEtl.outputs.jobFlowId

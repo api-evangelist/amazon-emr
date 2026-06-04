@@ -1,0 +1,66 @@
+arazzo: 1.0.1
+info:
+  title: Amazon EMR Launch a Hadoop and Hive Cluster
+  summary: Create an EMR cluster with the Hadoop and Hive applications installed.
+  description: >-
+    Launches a managed Amazon EMR cluster pre-configured for batch SQL and
+    MapReduce analytics by installing both the Hadoop and Hive applications.
+    The workflow calls RunJobFlow with the supplied cluster name, instance
+    configuration, and release label, requests Hadoop and Hive, and returns the
+    new cluster's JobFlowId. Every step spells out its request inline, including
+    the AWS JSON protocol X-Amz-Target header, so the flow can be read and
+    executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: emrApi
+  url: ../openapi/amazon-emr-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-hadoop-hive-cluster
+  summary: Run a new EMR cluster with the Hadoop and Hive applications installed.
+  description: >-
+    Creates and starts a new EMR cluster with the Hadoop and Hive applications
+    installed for batch SQL and MapReduce analytics, returning the identifier
+    of the newly created cluster.
+  inputs:
+    type: object
+    required:
+    - name
+    - instances
+    - releaseLabel
+    properties:
+      name:
+        type: string
+        description: The name of the cluster to create.
+      instances:
+        type: object
+        description: The instance configuration for the cluster.
+      releaseLabel:
+        type: string
+        description: The Amazon EMR release label (e.g. emr-6.10.0).
+  steps:
+  - stepId: launchHadoopHiveCluster
+    description: >-
+      Create and start a new EMR cluster with the Hadoop and Hive applications
+      installed using the supplied name, instance configuration, and release
+      label.
+    operationId: RunJobFlow
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: ElasticMapReduce.RunJobFlow
+    requestBody:
+      contentType: application/json
+      payload:
+        Name: $inputs.name
+        Instances: $inputs.instances
+        ReleaseLabel: $inputs.releaseLabel
+        Applications:
+        - Name: Hadoop
+        - Name: Hive
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobFlowId: $response.body#/JobFlowId
+  outputs:
+    jobFlowId: $steps.launchHadoopHiveCluster.outputs.jobFlowId

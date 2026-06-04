@@ -1,0 +1,65 @@
+arazzo: 1.0.1
+info:
+  title: Amazon EMR Launch a Spark Cluster
+  summary: Create and start a new EMR cluster pre-configured to run Apache Spark.
+  description: >-
+    Launches a managed Amazon EMR cluster (job flow) with the Spark application
+    installed so the cluster is ready to run large-scale distributed data
+    processing and machine learning workloads. The workflow calls RunJobFlow
+    with the supplied cluster name, instance configuration, and release label,
+    requests the Spark application, and returns the new cluster's JobFlowId.
+    Every step spells out its request inline, including the AWS JSON protocol
+    X-Amz-Target header, so the flow can be read and executed without opening
+    the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: emrApi
+  url: ../openapi/amazon-emr-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-spark-cluster
+  summary: Run a new EMR cluster with the Spark application installed.
+  description: >-
+    Creates and starts a new EMR cluster using the provided instance
+    configuration and release label, installing Apache Spark, and returns the
+    identifier of the newly created cluster.
+  inputs:
+    type: object
+    required:
+    - name
+    - instances
+    - releaseLabel
+    properties:
+      name:
+        type: string
+        description: The name of the cluster to create.
+      instances:
+        type: object
+        description: The instance configuration for the cluster (master/core/task layout).
+      releaseLabel:
+        type: string
+        description: The Amazon EMR release label (e.g. emr-6.10.0).
+  steps:
+  - stepId: launchCluster
+    description: >-
+      Create and start a new EMR cluster with the Spark application using the
+      supplied name, instance configuration, and release label.
+    operationId: RunJobFlow
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: ElasticMapReduce.RunJobFlow
+    requestBody:
+      contentType: application/json
+      payload:
+        Name: $inputs.name
+        Instances: $inputs.instances
+        ReleaseLabel: $inputs.releaseLabel
+        Applications:
+        - Name: Spark
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobFlowId: $response.body#/JobFlowId
+  outputs:
+    jobFlowId: $steps.launchCluster.outputs.jobFlowId

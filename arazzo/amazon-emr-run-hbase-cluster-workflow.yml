@@ -1,0 +1,65 @@
+arazzo: 1.0.1
+info:
+  title: Amazon EMR Launch an HBase Cluster
+  summary: Create an EMR cluster with the Apache HBase application installed.
+  description: >-
+    Launches a managed Amazon EMR cluster pre-configured for low-latency NoSQL
+    workloads by installing the Apache HBase application. The workflow calls
+    RunJobFlow with the supplied cluster name, instance configuration, and
+    release label, requests the HBase application, and returns the new cluster's
+    JobFlowId. Every step spells out its request inline, including the AWS JSON
+    protocol X-Amz-Target header, so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: emrApi
+  url: ../openapi/amazon-emr-openapi.yml
+  type: openapi
+workflows:
+- workflowId: run-hbase-cluster
+  summary: Run a new EMR cluster with the Apache HBase application installed.
+  description: >-
+    Creates and starts a new EMR cluster with the Apache HBase application
+    installed for low-latency NoSQL workloads, returning the identifier of the
+    newly created cluster.
+  inputs:
+    type: object
+    required:
+    - name
+    - instances
+    - releaseLabel
+    properties:
+      name:
+        type: string
+        description: The name of the cluster to create.
+      instances:
+        type: object
+        description: The instance configuration for the cluster.
+      releaseLabel:
+        type: string
+        description: The Amazon EMR release label (e.g. emr-6.10.0).
+  steps:
+  - stepId: launchHbaseCluster
+    description: >-
+      Create and start a new EMR cluster with the Apache HBase application
+      installed using the supplied name, instance configuration, and release
+      label.
+    operationId: RunJobFlow
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: ElasticMapReduce.RunJobFlow
+    requestBody:
+      contentType: application/json
+      payload:
+        Name: $inputs.name
+        Instances: $inputs.instances
+        ReleaseLabel: $inputs.releaseLabel
+        Applications:
+        - Name: HBase
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobFlowId: $response.body#/JobFlowId
+  outputs:
+    jobFlowId: $steps.launchHbaseCluster.outputs.jobFlowId
