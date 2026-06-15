@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon EMR API",
+    "version": "2009-03-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon EMR Create and Start an EMR Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://elasticmapreduce.{region}.amazonaws.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates and starts running a new cluster (job flow)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
