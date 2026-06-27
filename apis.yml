@@ -48,27 +48,24 @@ apis:
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-emr/overview
-  - type: ArazzoWorkflows
-    url: arazzo/
-    workflows:
-      - url: arazzo/amazon-emr-run-cluster-with-steps-workflow.yml
-        name: Amazon EMR Launch a Cluster With Processing Steps
-        summary: Create a cluster and queue processing steps to run as soon as it starts.
-      - url: arazzo/amazon-emr-run-hadoop-hive-cluster-workflow.yml
-        name: Amazon EMR Launch a Hadoop and Hive Cluster
-        summary: Create an EMR cluster with the Hadoop and Hive applications installed.
-      - url: arazzo/amazon-emr-run-hbase-cluster-workflow.yml
-        name: Amazon EMR Launch an HBase Cluster
-        summary: Create an EMR cluster with the Apache HBase application installed.
-      - url: arazzo/amazon-emr-run-presto-query-cluster-workflow.yml
-        name: Amazon EMR Launch a Presto Query Cluster
-        summary: Create an EMR cluster with the Presto application for interactive SQL.
-      - url: arazzo/amazon-emr-run-spark-cluster-workflow.yml
-        name: Amazon EMR Launch a Spark Cluster
-        summary: Create and start a new EMR cluster pre-configured to run Apache Spark.
-      - url: arazzo/amazon-emr-run-spark-etl-job-workflow.yml
-        name: Amazon EMR Run a Spark ETL Job
-        summary: Launch a Spark cluster and queue an ETL processing step in one call.
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-cluster-with-steps-workflow.yml
+    name: Amazon EMR Launch a Cluster With Processing Steps
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-hadoop-hive-cluster-workflow.yml
+    name: Amazon EMR Launch a Hadoop and Hive Cluster
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-hbase-cluster-workflow.yml
+    name: Amazon EMR Launch an HBase Cluster
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-presto-query-cluster-workflow.yml
+    name: Amazon EMR Launch a Presto Query Cluster
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-spark-cluster-workflow.yml
+    name: Amazon EMR Launch a Spark Cluster
+  - type: Arazzo
+    url: arazzo/amazon-emr-run-spark-etl-job-workflow.yml
+    name: Amazon EMR Run a Spark ETL Job
   - type: Portal
     url: https://aws.amazon.com/
   - type: DeveloperPortal
@@ -81,7 +78,7 @@ common:
     url: https://github.com/aws
   - type: Console
     url: https://console.aws.amazon.com/emr/
-  - type: SignUp
+  - type: Signup
     url: https://portal.aws.amazon.com/billing/signup
   - type: Login
     url: https://signin.aws.amazon.com/
