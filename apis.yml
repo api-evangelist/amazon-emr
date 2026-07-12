@@ -46,6 +46,12 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-emr-context.jsonld
 common:
+  - type: TrustCenter
+    url: security/amazon-emr-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-emr-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-emr-domain-security.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-emr/overview
   - type: Arazzo
