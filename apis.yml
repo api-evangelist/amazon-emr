@@ -46,6 +46,8 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-emr-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-emr-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-emr-trust-center.yml
   - type: VulnerabilityDisclosure
