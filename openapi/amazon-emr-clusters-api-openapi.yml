@@ -1,20 +1,12 @@
 openapi: 3.1.0
 info:
-  title: Amazon EMR API
-  description: >-
-    Amazon EMR (Elastic MapReduce) provides a managed big data platform that
-    simplifies running open-source frameworks such as Apache Spark and Hadoop
-    to process and analyze vast amounts of data. This API enables you to
-    create and manage clusters, add processing steps, configure auto-scaling,
-    and monitor cluster health and performance.
+  title: Amazon EMR Clusters API
+  description: Amazon EMR (Elastic MapReduce) provides a managed big data platform that simplifies running open-source frameworks such as Apache Spark and Hadoop to process and analyze vast amounts of data. This API enables you to create and manage clusters, add processing steps, configure auto-scaling, and monitor cluster health and performance.
   version: '2009-03-31'
   contact:
     name: Amazon Web Services
     url: https://aws.amazon.com/contact-us/
   termsOfService: https://aws.amazon.com/service-terms/
-externalDocs:
-  description: Amazon EMR API Reference
-  url: https://docs.aws.amazon.com/emr/latest/APIReference/Welcome.html
 servers:
 - url: https://elasticmapreduce.{region}.amazonaws.com
   description: Amazon EMR Regional Endpoint
@@ -95,3 +87,6 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+externalDocs:
+  description: Amazon EMR API Reference
+  url: https://docs.aws.amazon.com/emr/latest/APIReference/Welcome.html
