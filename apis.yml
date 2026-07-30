@@ -3,6 +3,18 @@ description: >-
   Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive SQL
   queries, and machine learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive,
   Apache HBase, Apache Flink, Apache Hudi, and Presto.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/emr/
 created: '2024-01-15'
@@ -17,34 +29,30 @@ tags:
   - Data Processing
   - Hadoop
 apis:
-  - name: Amazon EMR API
-    description: >-
-      API for creating and managing Amazon EMR clusters, steps, instance groups, and running distributed big data
-      processing workloads.
-    humanURL: https://aws.amazon.com/emr/
-    baseURL: https://elasticmapreduce.amazonaws.com
-    tags:
-      - Analytics
-      - Big Data
-      - Data Processing
-      - Spark
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/emr/latest/ManagementGuide/
-      - type: OpenAPI
-        url: openapi/amazon-emr-openapi.yml
-      - type: APIReference
-        url: https://docs.aws.amazon.com/emr/latest/APIReference/
-      - type: GettingStarted
-        url: https://aws.amazon.com/emr/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/emr/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/emr/faqs/
-      - type: JSONSchema
-        url: json-schema/amazon-emr-schema.json
-      - type: JSONLD
-        url: json-ld/amazon-emr-context.jsonld
+- aid: amazon-emr:amazon-emr-clusters-api
+  name: Amazon EMR Clusters API
+  description: Operations for creating, managing, and terminating EMR clusters
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/emr/latest/ManagementGuide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/emr/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/emr/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/emr/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/emr/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-emr-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-emr-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/amazon-emr-agentic-access.yml
