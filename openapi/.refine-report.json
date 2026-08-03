@@ -1,0 +1,14 @@
+{
+  "provider": "amazon-emr",
+  "sources": [
+    "amazon-emr-clusters-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-emr-clusters-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
