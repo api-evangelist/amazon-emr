@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "f8879705-632e-4994-888f-c14a7c49b93b",
+      "name": "Clusters",
+      "description": {
+        "content": "Operations for creating, managing, and terminating EMR clusters",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e45a84d3-d0ef-45f9-8835-f7b0775b74be",
+          "name": "Amazon EMR Create and Start an EMR Cluster",
+          "request": {
+            "name": "Amazon EMR Create and Start an EMR Cluster",
+            "description": {
+              "content": "Creates and starts running a new cluster (job flow).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS Region",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Instances\": \"<object>\",\n  \"ReleaseLabel\": \"<string>\",\n  \"Steps\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"Applications\": [\n    {\n      \"Name\": \"<string>\"\n    },\n    {\n      \"Name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4a945a2b-0919-4267-bb22-123ec2dcbe52",
+              "name": "Cluster created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS Region",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"example-name\",\n  \"Instances\": {},\n  \"ReleaseLabel\": \"example\",\n  \"Steps\": [],\n  \"Applications\": []\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobFlowId\": \"example-id-12345\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "AWS Region",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "https://elasticmapreduce.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "817da1c4-fd1f-4fb8-b334-38ec22753460",
+    "name": "Amazon EMR Clusters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon EMR (Elastic MapReduce) provides a managed big data platform that simplifies running open-source frameworks such as Apache Spark and Hadoop to process and analyze vast amounts of data. This API enables you to create and manage clusters, add processing steps, configure auto-scaling, and monitor cluster health and performance.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}
