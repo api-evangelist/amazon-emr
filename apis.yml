@@ -35,6 +35,8 @@ apis:
   humanURL: https://aws.amazon.com/emr/
   baseURL: https://elasticmapreduce.amazonaws.com
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
