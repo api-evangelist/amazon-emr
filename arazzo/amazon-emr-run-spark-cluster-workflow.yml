@@ -13,8 +13,8 @@ info:
     the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: emrApi
-  url: ../openapi/amazon-emr-openapi.yml
+- name: clustersApi
+  url: ../openapi/amazon-emr-clusters-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: run-spark-cluster
