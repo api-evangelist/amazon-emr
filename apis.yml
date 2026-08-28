@@ -3,6 +3,18 @@ description: >-
   Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive SQL
   queries, and machine learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive,
   Apache HBase, Apache Flink, Apache Hudi, and Presto.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
