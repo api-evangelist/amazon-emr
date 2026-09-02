@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon EMR Clusters API
   description: Amazon EMR (Elastic MapReduce) provides a managed big data platform that simplifies running open-source frameworks such as Apache Spark and Hadoop to process and analyze vast amounts of data. This API enables you to create and manage clusters, add processing steps, configure auto-scaling, and monitor cluster health and performance.
