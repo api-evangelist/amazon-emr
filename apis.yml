@@ -68,7 +68,7 @@ apis:
     url: json-ld/amazon-emr-context.jsonld
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/emr/
 - type: AgenticAccess
   url: agentic-access/amazon-emr-agentic-access.yml
 - type: TrustCenter
@@ -174,5 +174,5 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
