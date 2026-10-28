@@ -1,4 +1,4 @@
-# Amazon EMR (amazon-emr)
+# Amazon EMR
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,81 +66,185 @@
 
 Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive SQL queries, and machine learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto.
 
-**APIs.json:** [https://aws.amazon.com/emr/](https://aws.amazon.com/emr/)
+**Areas:** Amazon Web Services · Analytics · Apache Spark · AWS · Big Data · Data Processing · Hadoop
 
-## Tags
+## Amazon EMR on APIs.io
 
-- Amazon Web Services
-- Analytics
-- Apache Spark
-- AWS
-- Big Data
-- Data Processing
-- Hadoop
+Everything profiled for Amazon EMR is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-emr/](https://apis.io/providers/amazon-emr/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (12)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+- [Amazon EMR Clusters API](https://apis.io/apis/amazon-emr/amazon-emr-clusters-api/) — Operations for creating, managing, and terminating EMR clusters
+- [Amazon EMR Emr Auto Termination Policy API](https://apis.io/apis/amazon-emr/amazon-emr-auto-termination-policy-api/) — The Emr Auto Termination Policy API from Amazon EMR — 3 operation(s) for emr auto termination policy.
+- [Amazon EMR Emr Instance Fleet API](https://apis.io/apis/amazon-emr/amazon-emr-instance-fleet-api/) — The Emr Instance Fleet API from Amazon EMR — 3 operation(s) for emr instance fleet.
+- [Amazon EMR Emr Instance Group API](https://apis.io/apis/amazon-emr/amazon-emr-instance-group-api/) — The Emr Instance Group API from Amazon EMR — 3 operation(s) for emr instance group.
+- [Amazon EMR Emr Managed Scaling Policy API](https://apis.io/apis/amazon-emr/amazon-emr-managed-scaling-policy-api/) — The Emr Managed Scaling Policy API from Amazon EMR — 3 operation(s) for emr managed scaling policy.
+- [Amazon EMR Emr Notebook Execution API](https://apis.io/apis/amazon-emr/amazon-emr-notebook-execution-api/) — The Emr Notebook Execution API from Amazon EMR — 4 operation(s) for emr notebook execution.
+- [Amazon EMR Emr Operations API](https://apis.io/apis/amazon-emr/amazon-emr-operations-api/) — The Emr Operations API from Amazon EMR — 26 operation(s) for emr operations.
+- [Amazon EMR Emr Security Configuration API](https://apis.io/apis/amazon-emr/amazon-emr-security-configuration-api/) — The Emr Security Configuration API from Amazon EMR — 4 operation(s) for emr security configuration.
+- [Amazon EMR Emr Session API](https://apis.io/apis/amazon-emr/amazon-emr-session-api/) — The Emr Session API from Amazon EMR — 3 operation(s) for emr session.
+- [Amazon EMR Emr Step API](https://apis.io/apis/amazon-emr/amazon-emr-step-api/) — The Emr Step API from Amazon EMR — 3 operation(s) for emr step.
+- [Amazon EMR Emr Studio API](https://apis.io/apis/amazon-emr/amazon-emr-studio-api/) — The Emr Studio API from Amazon EMR — 5 operation(s) for emr studio.
+- [Amazon EMR Emr Studio Session Mapping API](https://apis.io/apis/amazon-emr/amazon-emr-studio-session-mapping-api/) — The Emr Studio Session Mapping API from Amazon EMR — 5 operation(s) for emr studio session mapping.
 
-## APIs
+### Published properties
 
-### Amazon EMR API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-API for creating and managing Amazon EMR clusters, steps, instance groups, and running distributed big data processing workloads.
+#### Arazzo workflows (6)
 
-- **Human URL:** [https://aws.amazon.com/emr/](https://aws.amazon.com/emr/)
-- **Base URL:** `https://elasticmapreduce.amazonaws.com`
+Multi-step workflows that chain operations into a business task.
 
-#### Tags
+- [Amazon EMR Launch a Cluster With Processing Steps](https://apis.io/arazzos/amazon-emr/amazon-emr-run-cluster-with-steps-workflow/)
+- [Amazon EMR Launch a Hadoop and Hive Cluster](https://apis.io/arazzos/amazon-emr/amazon-emr-run-hadoop-hive-cluster-workflow/)
+- [Amazon EMR Launch an HBase Cluster](https://apis.io/arazzos/amazon-emr/amazon-emr-run-hbase-cluster-workflow/)
+- [Amazon EMR Launch a Presto Query Cluster](https://apis.io/arazzos/amazon-emr/amazon-emr-run-presto-query-cluster-workflow/)
+- [Amazon EMR Launch a Spark Cluster](https://apis.io/arazzos/amazon-emr/amazon-emr-run-spark-cluster-workflow/)
+- [Amazon EMR Run a Spark ETL Job](https://apis.io/arazzos/amazon-emr/amazon-emr-run-spark-etl-job-workflow/)
 
-- Analytics
-- Big Data
-- Data Processing
-- Spark
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/emr/latest/ManagementGuide/)
-- [OpenAPI](openapi/amazon-emr-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/amazon-emr.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-emr.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [API Reference](https://docs.aws.amazon.com/emr/latest/APIReference/)
-- [Getting Started](https://aws.amazon.com/emr/getting-started/)
-- [Pricing](https://aws.amazon.com/emr/pricing/)
-- [F A Q](https://aws.amazon.com/emr/faqs/)
-- [JSON Schema](json-schema/amazon-emr-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/amazon-emr-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Amazon Emr Agentic Access](https://apis.io/agentic-access/amazon-emr/amazon-emr-agentic-access/)
 
-## Common Properties
+#### JSON Schema (1)
 
-- [Arazzo Workflows](arazzo/) — [Arazzo Specification](https://spec.openapis.org/arazzo/latest.html)
-- [Portal](https://aws.amazon.com/)
-- [Developer Portal](https://aws.amazon.com/emr/)
+The data models the API reads and writes.
+
+- [Amazon EMR Cluster](https://apis.io/schemas/amazon-emr/amazon-emr/)
+
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Emr Structure](https://apis.io/json-structure/amazon-emr/amazon-emr-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Emr Context](https://apis.io/jsonld/amazon-emr/amazon-emr-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Emr Vocabulary](https://apis.io/vocabularies/amazon-emr/amazon-emr-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Amazon Emr Example](https://apis.io/examples/amazon-emr/amazon-emr-example/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Amazon EMR API](https://apis.io/collections/amazon-emr/open-amazon-emr/)
+- [Amazon EMR Clusters API](https://apis.io/collections/amazon-emr/open-amazon-emr-clusters-api/)
+- [Amazon EMR API](https://apis.io/collections/amazon-emr/postman-amazon-emr/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon EMR — jsonschema rules](https://apis.io/rules/amazon-emr/amazon-emr-jsonschema-spectral-rules/)
+- [Amazon EMR API Rules](https://apis.io/rules/amazon-emr/amazon-emr-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Emr Domain Security](https://apis.io/security/amazon-emr/amazon-emr-domain-security/)
+- [Amazon Emr Trust Center](https://apis.io/security/amazon-emr/amazon-emr-trust-center/)
+- [Amazon Emr Vulnerability Disclosure](https://apis.io/security/amazon-emr/amazon-emr-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Emr Plans Pricing](https://apis.io/plans/amazon-emr/amazon-emr-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Emr Rate Limits](https://apis.io/rate-limits/amazon-emr/amazon-emr-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Emr Finops](https://apis.io/finops/amazon-emr/amazon-emr-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/emr/)
 - [Documentation](https://docs.aws.amazon.com/emr/)
-- [Blog](https://aws.amazon.com/blogs/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/emr/)
-- [Sign Up](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [Status Page](https://health.aws.amazon.com/health/status)
 - [Support](https://aws.amazon.com/support/)
-- [F A Q](https://aws.amazon.com/emr/faqs/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
-- [Compliance](https://aws.amazon.com/compliance/)
+- [Blog](https://aws.amazon.com/blogs/)
 - [Security](https://aws.amazon.com/security/)
-- [YouTube](https://www.youtube.com/user/AmazonWebServices)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/emr)
-- [Knowledge Center](https://repost.aws/knowledge-center)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Spectral Rules](rules/amazon-emr-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-emr-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Compliance](https://aws.amazon.com/compliance/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 53.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 54.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 53.6 |
+| Access clarity | 61.8 |
+
+**Agent readiness 20.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-emr/](https://apis.io/providers/amazon-emr/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon EMR: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-emr/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
