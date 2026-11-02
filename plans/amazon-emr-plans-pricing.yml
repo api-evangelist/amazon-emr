@@ -1,0 +1,116 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/emr/pricing/
+sources:
+- https://aws.amazon.com/emr/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Live rate tables are rendered via pricing-API tokens and show no numbers in the page text; the only
+  numeric prices visible are in the worked pricing examples (US East-1) and the EKS cluster fee. Billing
+  is per-second with a one-minute minimum on vCPU/memory/storage resources.
+plan_count: 6
+currency: USD
+plans:
+- name: Amazon EKS cluster additional charge
+  price_text: $0.10 per hour
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: per Amazon EKS cluster per hour
+- name: EMR WAL write/read requests (example, US East N. Virginia)
+  price_text: $0.0883 per GiB
+  price: 0.0883
+  currency: USD
+  period: per-use
+  unit: per GiB of EMR WAL requests
+- name: EMR WAL usage (example)
+  price_text: $0.0018 per WAL per Hour
+  price: 0.0018
+  currency: USD
+  period: per-use
+  unit: per WAL per hour
+- name: EMR Serverless vCPU (example)
+  price_text: $0.052624
+  price: 0.052624
+  currency: USD
+  period: per-use
+  unit: per vCPU-hour
+- name: EMR Serverless memory (example)
+  price_text: $0.0057785
+  price: 0.0057785
+  currency: USD
+  period: per-use
+  unit: per GB-hour
+- name: EMR on EKS uplift vCPU (example)
+  price_text: $0.007084
+  price: 0.007084
+  currency: USD
+  period: per-use
+  unit: per vCPU-hour
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - compute
+  - data
+  plans:
+  - name: Amazon EKS cluster additional charge
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: EMR WAL write/read requests (example, US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: EMR WAL usage (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: EMR Serverless vCPU (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: EMR Serverless memory (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: EMR on EKS uplift vCPU (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
