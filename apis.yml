@@ -1,7 +1,7 @@
 name: Amazon EMR
-description: Amazon EMR is a cloud big data platform for running large-scale distributed data processing
-  jobs, interactive SQL queries, and machine learning applications using open-source analytics frameworks
-  such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto.
+description: Amazon EMR is a cloud big data platform for running large-scale distributed data processing jobs, interactive SQL queries, and machine
+  learning applications using open-source analytics frameworks such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and
+  Presto.
 deliveryModel:
   model: saas
   open_source: false
@@ -21,11 +21,12 @@ accessModel:
   try_now: false
   public: false
   label: Paid
-  confidence: low
+  confidence: medium
   source:
   - plans
+  - authentication
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/emr/
@@ -47,149 +48,58 @@ tags_raw:
 - Big Data
 - Data Processing
 - Hadoop
-apis:
-- aid: amazon-emr:amazon-emr-clusters-api
-  name: Amazon EMR Clusters API
-  description: Operations for creating, managing, and terminating EMR clusters
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Cluster
-  tags_raw:
-  - Clusters
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-clusters-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/emr/latest/ManagementGuide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/emr/latest/APIReference/
-  - type: GettingStarted
-    url: https://aws.amazon.com/emr/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/emr/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/emr/faqs/
-  - type: JSONSchema
-    url: json-schema/amazon-emr-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-emr-context.jsonld
-- aid: amazon-emr:amazon-emr-auto-termination-policy-api
-  name: Amazon EMR Emr Auto Termination Policy API
-  description: >-
-    The Emr Auto Termination Policy API from Amazon EMR — 3 operation(s) for emr auto termination policy.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Auto Termination Policy
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-auto-termination-policy-api-openapi.yml
-- aid: amazon-emr:amazon-emr-instance-fleet-api
-  name: Amazon EMR Emr Instance Fleet API
-  description: The Emr Instance Fleet API from Amazon EMR — 3 operation(s) for emr instance fleet.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Instance Fleet
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-instance-fleet-api-openapi.yml
-- aid: amazon-emr:amazon-emr-instance-group-api
-  name: Amazon EMR Emr Instance Group API
-  description: The Emr Instance Group API from Amazon EMR — 3 operation(s) for emr instance group.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Instance Group
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-instance-group-api-openapi.yml
-- aid: amazon-emr:amazon-emr-managed-scaling-policy-api
-  name: Amazon EMR Emr Managed Scaling Policy API
-  description: >-
-    The Emr Managed Scaling Policy API from Amazon EMR — 3 operation(s) for emr managed scaling policy.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Managed Scaling Policy
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-managed-scaling-policy-api-openapi.yml
-- aid: amazon-emr:amazon-emr-notebook-execution-api
-  name: Amazon EMR Emr Notebook Execution API
-  description: >-
-    The Emr Notebook Execution API from Amazon EMR — 4 operation(s) for emr notebook execution.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Notebook Execution
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-notebook-execution-api-openapi.yml
-- aid: amazon-emr:amazon-emr-operations-api
-  name: Amazon EMR Emr Operations API
-  description: The Emr Operations API from Amazon EMR — 26 operation(s) for emr operations.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-operations-api-openapi.yml
-- aid: amazon-emr:amazon-emr-security-configuration-api
-  name: Amazon EMR Emr Security Configuration API
-  description: >-
-    The Emr Security Configuration API from Amazon EMR — 4 operation(s) for emr security configuration.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Security Configuration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-security-configuration-api-openapi.yml
-- aid: amazon-emr:amazon-emr-session-api
-  name: Amazon EMR Emr Session API
-  description: The Emr Session API from Amazon EMR — 3 operation(s) for emr session.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Session
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-session-api-openapi.yml
-- aid: amazon-emr:amazon-emr-step-api
-  name: Amazon EMR Emr Step API
-  description: The Emr Step API from Amazon EMR — 3 operation(s) for emr step.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Step
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-step-api-openapi.yml
-- aid: amazon-emr:amazon-emr-studio-api
-  name: Amazon EMR Emr Studio API
-  description: The Emr Studio API from Amazon EMR — 5 operation(s) for emr studio.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Studio
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-studio-api-openapi.yml
-- aid: amazon-emr:amazon-emr-studio-session-mapping-api
-  name: Amazon EMR Emr Studio Session Mapping API
-  description: >-
-    The Emr Studio Session Mapping API from Amazon EMR — 5 operation(s) for emr studio session mapping.
-  humanURL: https://aws.amazon.com/emr/
-  baseURL: https://elasticmapreduce.amazonaws.com
-  tags:
-  - Emr Studio Session Mapping
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-emr-studio-session-mapping-api-openapi.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
 common:
+- type: Spectral
+  url: rules/amazon-emr-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-emr-rules.yml
+- type: Spectral
+  url: rules/amazon-emr-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-emr-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-emr-data-model.yml
+- type: CLI
+  url: cli/amazon-emr-cli.yml
+- type: Idempotency
+  url: conventions/amazon-emr-conventions.yml
+- type: Conventions
+  url: conventions/amazon-emr-conventions.yml
+- type: Deprecation
+  url: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-standard-support.html
+- type: Lifecycle
+  url: lifecycle/amazon-emr-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-emr-error-codes.yml
+- type: ErrorCatalog
+  url: errors/amazon-emr-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-emr-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-emr-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-emr-security.txt
+- type: SecurityTxt
+  url: well-known/amazon-emr-repost-security.txt
+- type: WellKnown
+  url: well-known/amazon-emr-well-known.yml
+- type: Hosts
+  url: hosts/amazon-emr-hosts.yml
+- type: Vendors
+  url: vendors/amazon-emr-vendors.yml
+- type: SDKs
+  url: packages/amazon-emr-packages.yml
+- type: Packages
+  url: packages/amazon-emr-packages.yml
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
+- type: Authentication
+  url: authentication/amazon-emr-authentication.yml
 - type: CapabilityMap
   url: capabilities/amazon-emr-capability-edges.yml
   name: Amazon EMR Business Capability Map
@@ -303,8 +213,410 @@ common:
     description: Query data processed by EMR using Athena SQL
   - name: Amazon SageMaker
     description: Hand off processed data to SageMaker for model training
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- type: UsageTerms
+  url: terms/amazon-emr-terms-of-service.yml
+- type: Attestations
+  url: compliance/amazon-emr-compliance.yml
+- type: DataLicense
+  url: data-license/amazon-emr-data-license.yml
+apis:
+- aid: amazon-emr:amazon-emr-clusters-api
+  name: Amazon EMR Clusters API
+  description: Operations for creating, managing, and terminating EMR clusters
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Cluster
+  tags_raw:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/emr/latest/ManagementGuide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/emr/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/emr/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/emr/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/emr/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-emr-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-emr-context.jsonld
+- aid: amazon-emr:amazon-emr-auto-termination-policy-api
+  name: Amazon EMR Emr Auto Termination Policy API
+  description: >-
+    The Emr Auto Termination Policy API from Amazon EMR — 3 operation(s) for emr auto termination policy.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Auto Termination Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-auto-termination-policy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-put-auto-termination-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-remove-auto-termination-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-auto-termination-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-auto-termination-policy-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-put-auto-termination-policy-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-remove-auto-termination-policy-output-schema.json
+- aid: amazon-emr:amazon-emr-instance-fleet-api
+  name: Amazon EMR Emr Instance Fleet API
+  description: The Emr Instance Fleet API from Amazon EMR — 3 operation(s) for emr instance fleet.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Instance Fleet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-instance-fleet-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-instance-fleets-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-add-instance-fleet-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-instance-fleets-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-modify-instance-fleet-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-add-instance-fleet-input-schema.json
+- aid: amazon-emr:amazon-emr-instance-group-api
+  name: Amazon EMR Emr Instance Group API
+  description: The Emr Instance Group API from Amazon EMR — 3 operation(s) for emr instance group.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Instance Group
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-instance-group-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-add-instance-groups-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-instance-groups-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-add-instance-groups-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-instance-groups-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-modify-instance-groups-input-schema.json
+- aid: amazon-emr:amazon-emr-managed-scaling-policy-api
+  name: Amazon EMR Emr Managed Scaling Policy API
+  description: >-
+    The Emr Managed Scaling Policy API from Amazon EMR — 3 operation(s) for emr managed scaling policy.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Managed Scaling Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-managed-scaling-policy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-put-managed-scaling-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-remove-managed-scaling-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-managed-scaling-policy-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-managed-scaling-policy-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-put-managed-scaling-policy-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-remove-managed-scaling-policy-output-schema.json
+- aid: amazon-emr:amazon-emr-notebook-execution-api
+  name: Amazon EMR Emr Notebook Execution API
+  description: >-
+    The Emr Notebook Execution API from Amazon EMR — 4 operation(s) for emr notebook execution.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Notebook Execution
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-notebook-execution-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-notebook-execution-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-notebook-executions-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-notebook-executions-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-notebook-execution-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-stop-notebook-execution-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-notebook-execution-output-schema.json
+- aid: amazon-emr:amazon-emr-operations-api
+  name: Amazon EMR Emr Operations API
+  description: The Emr Operations API from Amazon EMR — 26 operation(s) for emr operations.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-run-job-flow-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-instances-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-managed-endpoint-session-credentials-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-on-cluster-app-uipresigned-urlinput-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-add-job-flow-steps-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-release-label-output-schema.json
+- aid: amazon-emr:amazon-emr-security-configuration-api
+  name: Amazon EMR Emr Security Configuration API
+  description: >-
+    The Emr Security Configuration API from Amazon EMR — 4 operation(s) for emr security configuration.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Security Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-security-configuration-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-security-configuration-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-security-configurations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-security-configurations-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-security-configuration-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-security-configuration-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-security-configurations-response-schema.json
+- aid: amazon-emr:amazon-emr-session-api
+  name: Amazon EMR Emr Session API
+  description: The Emr Session API from Amazon EMR — 3 operation(s) for emr session.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Session
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-session-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-session-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-session-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-sessions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-session-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-sessions-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-sessions-response-schema.json
+- aid: amazon-emr:amazon-emr-step-api
+  name: Amazon EMR Emr Step API
+  description: The Emr Step API from Amazon EMR — 3 operation(s) for emr step.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Step
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-step-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-steps-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-cancel-steps-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-steps-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-step-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-cancel-steps-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-step-output-schema.json
+- aid: amazon-emr:amazon-emr-studio-api
+  name: Amazon EMR Emr Studio API
+  description: The Emr Studio API from Amazon EMR — 5 operation(s) for emr studio.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Studio
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-studio-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-studio-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-update-studio-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-studios-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-studio-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-studios-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-delete-studio-input-schema.json
+- aid: amazon-emr:amazon-emr-studio-session-mapping-api
+  name: Amazon EMR Emr Studio Session Mapping API
+  description: >-
+    The Emr Studio Session Mapping API from Amazon EMR — 5 operation(s) for emr studio session mapping.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Studio Session Mapping
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-studio-session-mapping-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-studio-session-mapping-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-update-studio-session-mapping-input-schema.json
+- aid: amazon-emr:amazon-emr-applications-api
+  name: Amazon EMR Emr Applications API
+  description: The Emr Applications API from Amazon EMR — 2 operation(s) for emr applications.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-applications-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-application-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-update-application-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-applications-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-applications-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-application-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-application-request-schema.json
+- aid: amazon-emr:amazon-emr-endpoints-api
+  name: Amazon EMR Emr Endpoints API
+  description: The Emr Endpoints API from Amazon EMR — 2 operation(s) for emr endpoints.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-endpoints-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-managed-endpoint-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-managed-endpoints-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-managed-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-managed-endpoints-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-managed-endpoint-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-delete-managed-endpoint-request-schema.json
+- aid: amazon-emr:amazon-emr-jobruns-api
+  name: Amazon EMR Emr Jobruns API
+  description: The Emr Jobruns API from Amazon EMR — 4 operation(s) for emr jobruns.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Jobruns
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-jobruns-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-emr-serverless-start-job-run-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-start-job-run-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-emr-serverless-list-job-runs-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-job-runs-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-get-job-run-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-emr-serverless-cancel-job-run-request-schema.json
+- aid: amazon-emr:amazon-emr-tags-api
+  name: Amazon EMR Emr Tags API
+  description: The Emr Tags API from Amazon EMR — 1 operation(s) for emr tags.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Emr Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-tags-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-tag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-untag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-tags-for-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-tags-for-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-tag-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-untag-resource-response-schema.json
+- aid: amazon-emr:amazon-emr-job-templates-api
+  name: Amazon EMR Job Templates API
+  description: The Job Templates API from Amazon EMR — 2 operation(s) for job templates.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Job Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-job-templates-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-job-template-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-job-templates-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-job-template-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-job-templates-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-job-template-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-delete-job-template-request-schema.json
+- aid: amazon-emr:amazon-emr-virtual-clusters-api
+  name: Amazon EMR Virtual Clusters API
+  description: The Virtual Clusters API from Amazon EMR — 2 operation(s) for virtual clusters.
+  humanURL: https://aws.amazon.com/emr/
+  baseURL: https://elasticmapreduce.amazonaws.com
+  tags:
+  - Virtual Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-emr-virtual-clusters-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-virtual-clusters-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-virtual-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-update-virtual-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-list-virtual-clusters-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-create-virtual-cluster-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-emr-describe-virtual-cluster-request-schema.json
 x-parent: amazon-web-services
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v6

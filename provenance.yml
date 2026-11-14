@@ -23,9 +23,21 @@ artifacts:
   arazzo/amazon-emr-run-spark-etl-job-workflow.yml:
     method: derived
     evidence: Arazzo whose sourceDescriptions are our split specs (../openapi/)
+  authentication/amazon-emr-authentication.yml:
+    method: derived
+    evidence: declared in the artifact
   capabilities/amazon-emr-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-emr-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-emr-clusters-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-emr-clusters-api
@@ -38,6 +50,27 @@ artifacts:
   collections/amazon-emr.postman_collection.json:
     method: derived
     evidence: openapi/amazon-emr
+  compliance/amazon-emr-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-emr-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-emr-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-license/amazon-emr-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  data-model/amazon-emr-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-emr-error-codes.yml:
+    method: searched
+    evidence: declared in the artifact
+  errors/amazon-emr-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/amazon-emr-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -47,6 +80,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-emr-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -56,7 +92,295 @@ artifacts:
   json-ld/amazon-emr-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-emr-add-instance-fleet-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-add-instance-fleet-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-add-instance-groups-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-add-instance-groups-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-add-job-flow-steps-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-cancel-steps-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-cancel-steps-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-application-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-application-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-job-template-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-job-template-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-managed-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-managed-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-security-configuration-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-security-configuration-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-studio-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-studio-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-studio-session-mapping-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-virtual-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-create-virtual-cluster-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-delete-job-template-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-delete-managed-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-delete-studio-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-job-template-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-managed-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-notebook-execution-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-release-label-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-security-configuration-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-step-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-step-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-describe-virtual-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-emr-serverless-cancel-job-run-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-emr-serverless-list-job-runs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-emr-serverless-start-job-run-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-application-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-auto-termination-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-auto-termination-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-job-run-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-managed-endpoint-session-credentials-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-managed-scaling-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-managed-scaling-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-get-on-cluster-app-uipresigned-urlinput-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-applications-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-applications-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-instance-fleets-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-instance-fleets-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-instance-groups-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-instance-groups-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-instances-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-job-runs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-job-templates-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-job-templates-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-managed-endpoints-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-managed-endpoints-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-notebook-executions-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-notebook-executions-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-security-configurations-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-security-configurations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-security-configurations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-sessions-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-sessions-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-sessions-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-steps-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-steps-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-studios-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-studios-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-tags-for-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-virtual-clusters-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-list-virtual-clusters-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-modify-instance-fleet-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-modify-instance-groups-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-put-auto-termination-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-put-auto-termination-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-put-managed-scaling-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-put-managed-scaling-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-remove-auto-termination-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-remove-auto-termination-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-remove-managed-scaling-policy-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-remove-managed-scaling-policy-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-run-job-flow-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-emr-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-job-run-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-notebook-execution-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-notebook-execution-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-session-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-session-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-start-session-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-stop-notebook-execution-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-tag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-untag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-update-application-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-update-studio-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-update-studio-session-mapping-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-emr-update-virtual-cluster-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-structure/amazon-emr-structure.json:
@@ -65,7 +389,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -134,20 +458,43 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-emr-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-emr-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-emr-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-emr-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-emr-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
+  openapi/amazon-emr-applications-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-emr-auto-termination-policy-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-emr-clusters-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  openapi/amazon-emr-endpoints-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-emr-instance-fleet-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-emr-instance-group-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-emr-job-templates-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-emr-jobruns-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-emr-managed-scaling-policy-api-openapi.yml:
@@ -174,6 +521,18 @@ artifacts:
   openapi/amazon-emr-studio-session-mapping-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  openapi/amazon-emr-tags-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-emr-virtual-clusters-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/amazon-emr-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-emr-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-emr-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -184,6 +543,9 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   rules/amazon-emr-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-emr-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-emr-spectral-rules.yml:
@@ -202,8 +564,35 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/emr-2009-03-31.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/emr/service/2009-03-31/emr-2009-03-31.json
+      (sha256 60f4279c728e, fetched 2026-11-11T21:09:31+00:00)
+  smithy/emr-containers-2020-10-01.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/emr-containers/service/2020-10-01/emr-containers-2020-10-01.json
+      (sha256 f16774706d69, fetched 2026-11-11T21:09:32+00:00)
+  smithy/emr-serverless-2021-07-13.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/emr-serverless/service/2021-07-13/emr-serverless-2021-07-13.json
+      (sha256 97c851eabae2, fetched 2026-11-11T21:09:33+00:00)
+  terms/amazon-emr-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-emr-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-emr-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-emr-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-emr-repost-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-emr-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-emr-well-known.yml:
     method: unknown
     evidence: no authorship recorded
